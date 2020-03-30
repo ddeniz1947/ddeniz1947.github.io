@@ -15,7 +15,7 @@ h1{
 	color: #e2dbdb;
 }
 hr{
-	border-color:#F05F44;
+	border-color:white;
 	border-width: 3px;
 	max-width: 65px;
 }
@@ -26,14 +26,15 @@ hr{
 	font-weight:700;
 	border-radius:300px;
 	text-transform: uppercase;
+	color: black;
 }
 .btn-primary{
-	background-color: #F05F44;
-	border-color: #F05F44;
+	background-color: white;
+	border-color: white;
 }
 .btn-primary:hover{
-	background-color: #ee4b08;
-	border-color:#ee4b08;
+	background-color: gray;
+	border-color:gray;
 	border-width: 4px;
 }
 .btn-xl{
