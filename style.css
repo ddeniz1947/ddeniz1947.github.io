@@ -8,6 +8,7 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+  overflow-x: hidden !important;
 }
 h1{
 	font-size: 3rem;
@@ -20,9 +21,9 @@ hr{
 }
 .about-list{
   text-decoration: none;
-  list-style: none; 
   background-color: rgb(0,0,0,0.7);
   color: white;
+  margin-top: 50px !important;
 }
 .cover{
   width: 10rem;
@@ -173,4 +174,6 @@ a:hover {
   .nav-bar-container{
     padding: left;
   }
+ 
 }
+
