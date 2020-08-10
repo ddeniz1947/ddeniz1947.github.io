@@ -163,7 +163,21 @@ a:hover {
   .cont{
     margin-top: 50px !important;
   }
+  .indexBody{
+  background-color: rgb(0,0,0,0.7);
 }
+}
+
+@media screen and (min-width: 1200px) {
+.indexHeader{
+  margin-top: 30px;
+   
+}
+.indexBody{
+  background-color: rgb(0,0,0,0.2);
+}
+}
+
 @media screen and (max-height: 568px) {
   .cont{
     margin-top: 50px !important;
@@ -175,20 +189,4 @@ a:hover {
     padding: left;
   }
  
-}
-@media screen and (min-width: 1200px) {
-.indexHeader{
-  margin-top: 30px;
-   
-}
-.indexBody{
-  background-color: rgb(0,0,0,0.2);
-}
-}
-
-@media screen and (max-width: 1200px) {
-
-.indexBody{
-  background-color: rgb(0,0,0,0.7);
-}
 }
