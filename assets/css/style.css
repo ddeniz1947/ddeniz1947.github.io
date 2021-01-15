@@ -198,6 +198,6 @@ a:hover {
   height: 90% !important;
 }
 
-ul {
+.about-css-class ul {
   padding-inline-start: 10px !important;
 }
