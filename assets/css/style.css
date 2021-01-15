@@ -197,8 +197,9 @@ a:hover {
   position : absolute;
   width:100%;
   height: 90% !important;
+  pointer-events: none !important;
 }
 
 .about-css-class ul {
-  padding-inline-start: 10px !important;
+  padding-inline-start: 5px !important;
 }
