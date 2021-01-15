@@ -1,54 +1,54 @@
 body,
 html {
-	width: 100%;
-	height: 100%;
-	font-family: 'Montserrat', sans-serif;
-	background: url(https://denizcandinc.com/assets/img/header.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  background: url(https://denizcandinc.com/assets/img/header.jpg) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   overflow-x: hidden !important;
 }
-h1{
-	font-size: 3rem;
-	color: #e2dbdb;
+h1 {
+  font-size: 3rem;
+  color: #e2dbdb;
 }
-hr{
-	border-color:white;
-	border-width: 3px;
-	max-width: 65px;
+hr {
+  border-color: white;
+  border-width: 3px;
+  max-width: 65px;
 }
-.about-list{
+.about-list {
   text-decoration: none;
-  background-color: rgb(0,0,0,0.7);
+  background-color: rgb(0, 0, 0, 0.7);
   color: white;
   margin-top: 50px !important;
 }
-.cover{
+.cover {
   width: 10rem;
 }
-.buffer{
-	height: 10rem;
+.buffer {
+  height: 10rem;
 }
 .btn {
-	font-weight:700;
-	border-radius:300px;
-	text-transform: uppercase;
-	color: black;
+  font-weight: 700;
+  border-radius: 300px;
+  text-transform: uppercase;
+  color: black;
 }
-.btn-primary{
-	background-color: white;
-	border-color: white;
+.btn-primary {
+  background-color: white;
+  border-color: white;
 }
-.btn-primary:hover{
-	background-color: gray;
-	border-color:gray;
-	border-width: 4px;
+.btn-primary:hover {
+  background-color: gray;
+  border-color: gray;
+  border-width: 4px;
 }
-.btn-xl{
-	padding:1rem 2rem;
-
+.btn-xl {
+  padding: 1rem 2rem;
 }
 
 body {
@@ -66,7 +66,6 @@ a {
 a:hover {
   color: #f36;
 }
-
 
 .offcanvas {
   display: block;
@@ -99,9 +98,8 @@ a:hover {
   border-radius: 3px;
   z-index: 9999;
   transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-  background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-  opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 .offcanvas span:first-child {
@@ -140,10 +138,9 @@ a:hover {
   list-style-type: none;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   visibility: hidden;
   z-index: -1;
-
 }
 .offcanvas__menu-item {
   padding: 10px 0;
@@ -151,7 +148,7 @@ a:hover {
 }
 
 .offcanvas .toggle:checked ~ ul {
-  transform: scale(1.0, 1.0);
+  transform: scale(1, 1);
   opacity: 1;
   visibility: visible;
 }
@@ -161,43 +158,45 @@ a:hover {
     background: rgba(0, 0, 0, 0.8);
     color: white;
   }
-  .cont{
+  .cont {
     margin-top: 50px !important;
   }
-  .indexBody{
-  background-color: rgb(0,0,0,0.4);
-}
+  .indexBody {
+    background-color: rgb(0, 0, 0, 0.4);
+  }
 }
 
 @media screen and (min-width: 1200px) {
-.indexHeader{
-  margin-top: 30px;
-   
-}
-.indexBody{
-  background-color: rgb(0,0,0,0.2);
-}
+  .indexHeader {
+    margin-top: 30px;
+  }
+  .indexBody {
+    background-color: rgb(0, 0, 0, 0.2);
+  }
 }
 
 @media screen and (max-height: 568px) {
-  .cont{
+  .cont {
     margin-top: 50px !important;
   }
 }
 
 @media screen and (max-height: 360px) {
-  .nav-bar-container{
+  .nav-bar-container {
     padding: left;
   }
- 
 }
 
-
 #particles-js {
-  position : absolute;
-  width:100%;
+  position: absolute;
+  width: 100%;
   height: 90% !important;
-  pointer-events: none !important;
+}
+
+@media screen and (max-width: 550px) {
+  #particles-js {
+    pointer-events: none !important;
+  }
 }
 
 .about-css-class ul {
