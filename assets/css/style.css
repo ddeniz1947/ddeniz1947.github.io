@@ -127,6 +127,7 @@ a:hover {
   opacity: 1;
   transform: rotate(-45deg) translate(0, -1px);
   background: #f36;
+  z-index: 9999;
 }
 
 .offcanvas__menu {
