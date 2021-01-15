@@ -17,6 +17,7 @@
 </head>
 
 <body>
+  <div  id="particles-js"></div>
   <div class="nav-bar-container" id="particles-js">
     <nav>
       <div class="offcanvas">
@@ -65,9 +66,12 @@
       </div>
     </div>
   </div>
-  
+
   <div id="particles-js"></div>
 
+  <script>particlesJS.load('https://denizcandinc.com/particles.js', 'https://denizcandinc.com/particles.json', function () {
+      console.log('callback - particles.js config loaded');
+    });</script>
   <script src="https://denizcandinc.com/particles.js"></script>
 
 </body>
