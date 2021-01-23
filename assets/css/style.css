@@ -80,6 +80,7 @@ a:hover {
   left: 50px;
   z-index: 9999;
   user-select: none;
+  width: 80% !important;
 }
 
 .offcanvas .toggle {
