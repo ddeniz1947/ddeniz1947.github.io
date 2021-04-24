@@ -10,6 +10,9 @@ particlesJS.load('particles-js', 'particles.json', function() {
 */
 
 /* Otherwise just put the config content (json): */
+window.onload = (event) => {
+  document.getElementsByClassName("toggle")[0].checked = false;
+}
 
 particlesJS('particles-js',
   
@@ -148,4 +151,5 @@ update = function() {
   }
   requestAnimationFrame(update);
 };
-requestAnimationFrame(update);
+requestAnimationFrame(update); 
+
