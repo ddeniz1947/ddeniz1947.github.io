@@ -6,13 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://denizcandinc.com/assets/css/bootstrap.min.css">
-  <script>
-    window.onload = (event) => {
-      document.getElementsByClassName("offcanvas__menu")[0].style.transition= "none";
-      document.getElementsByClassName("toggle")[0].checked = false;
-      document.getElementsByClassName("offcanvas__menu")[0].style.transition= "transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1)";
-    }
-  </script>
   <script src="https://denizcandinc.com/assets/js/6488a7e0b8.js" crossorigin="anonymous"></script>
   <link rel="icon" href="https://denizcandinc.com/assets/img/dcd.png">
   <link rel="stylesheet" type="text/css" href="https://denizcandinc.com/assets/css/style.css">
@@ -27,10 +20,10 @@
         <span></span>
         <span></span>
         <ul class="offcanvas__menu">
-          <li class="offcanvas__menu-item"><a href="https://denizcandinc.com/index.html">Home</a></li>
-          <li class="offcanvas__menu-item"><a href="https://denizcandinc.com/about.html">About</a></li>
-          <li class="offcanvas__menu-item"><a href="https://denizcandinc.com/projects.html">Projects</a></li>
-          <li class="offcanvas__menu-item"><a href="https://denizcandinc.com/contact.html">Contact</a></li>
+          <li class="offcanvas__menu-item"><a onclick="menuFunction()" href="https://denizcandinc.com/index.html">Home</a></li>
+          <li class="offcanvas__menu-item"><a onclick="menuFunction()" href="https://denizcandinc.com/about.html">About</a></li>
+          <li class="offcanvas__menu-item"><a onclick="menuFunction()" href="https://denizcandinc.com/projects.html">Projects</a></li>
+          <li class="offcanvas__menu-item"><a onclick="menuFunction()" href="https://denizcandinc.com/contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
