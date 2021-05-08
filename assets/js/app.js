@@ -14,6 +14,25 @@ function menuFunction(){
   document.getElementsByClassName("toggle")[0].checked = false;
 }
 
+window.onload = (event) => {
+  if(window.innerHeight > 1080){
+    console.log("WORKED");
+    let windowHeightPixel = window.innerHeight.toString() + "px";
+    document.getElementsByClassName("offcanvas__menu")[0].style.height =windowHeightPixel;
+  }
+  
+};
+
+
+window.onresize = () => {
+  if(window.innerHeight > 1080){
+    console.log("WORKED");
+    let windowHeightPixel = window.innerHeight.toString() + "px";
+    document.getElementsByClassName("offcanvas__menu")[0].style.height =windowHeightPixel;
+  }
+  
+} 
+
 particlesJS('particles-js',
   
   {
@@ -152,4 +171,5 @@ update = function() {
   requestAnimationFrame(update);
 };
 requestAnimationFrame(update); 
+
 
