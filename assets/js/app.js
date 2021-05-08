@@ -16,7 +16,6 @@ function menuFunction(){
 
 window.onload = (event) => {
   if(window.innerHeight > 1080){
-    console.log("WORKED");
     let windowHeightPixel = window.innerHeight.toString() + "px";
     document.getElementsByClassName("offcanvas__menu")[0].style.height =windowHeightPixel;
   }
@@ -26,7 +25,6 @@ window.onload = (event) => {
 
 window.onresize = () => {
   if(window.innerHeight > 1080){
-    console.log("WORKED");
     let windowHeightPixel = window.innerHeight.toString() + "px";
     document.getElementsByClassName("offcanvas__menu")[0].style.height =windowHeightPixel;
   }
