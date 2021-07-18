@@ -19,7 +19,7 @@
             justify-content: center;
             align-content: center;
         }
-        
+
         @media screen and (max-width:1200px) {
             .containerGrid {
                 grid-template-columns: repeat(2, 35vw);
@@ -29,7 +29,7 @@
 
         @media screen and (max-width:650px) {
             .containerGrid {
-                grid-template-columns: repeat(2, 40vw); 
+                grid-template-columns: repeat(2, 40vw);
                 grid-template-rows: repeat(4, 35vh);
             }
         }
@@ -89,9 +89,10 @@
                     <li class="offcanvas__menu-item"><a onclick="menuFunction()"
                             href="https://denizcandinc.com/projects.html">Projects</a></li>
                     <li class="offcanvas__menu-item"><a onclick="menuFunction()"
-                            href="https://denizcandinc.com/contact.html">Contact</a></li>
+                            href="https://denizcandinc.com/certificates.html">Certificates</a></li>
                     <li class="offcanvas__menu-item"><a onclick="menuFunction()"
-                                href="https://denizcandinc.com/certificates.html">Certificates</a></li>
+                            href="https://denizcandinc.com/contact.html">Contact</a></li>
+
                 </ul>
             </div>
         </nav>
@@ -102,6 +103,16 @@
         <div class="row" style="display:block !important; z-index: 999 !important; justify-content: center;">
             <h1 class="text-uppercase about-header header-text"><strong>CERTIFICATES</strong></h1>
             <div class="containerGrid">
+                <!--FOURTH-->
+                <div class="grid-box-element">
+                    <img id="fourthPhoto" src="./assets/img/DCD_Mustafa_Akgul_Free_Software_Summer_Camp.png"
+                        width="100%" height="100%" alt="">
+                </div>
+                <div class="grid-box-element">
+                    Mustafa Akgül Özgür Yazılım Kampı, Linux Sistem Yönetimi 1 kursu <br>
+                    (20 Temmuz – 4 Ağustos 2018 - Bolu Abant İzzet Baysal Üniversitesi)
+                </div>
+
                 <!--FIRST-->
                 <div class="grid-box-element">
                     Akademik Bilişim Linux System Management 1.5 Course <br>
@@ -122,25 +133,17 @@
                     (8-10 March 2019 – Hacettepe University)
                 </div>
 
-               <!--THIRD-->
+                <!--THIRD-->
                 <div class="grid-box-element">
                     Microsoft Azure Fundamentals Course <br>
                     (19.04.2021 – Online)
                 </div>
                 <div class="grid-box-element">
-                    <img id="thirdPhoto" src="./assets/img/DCD_Microsoft_Azure_Fundamentals_Certificate.png" width="100%" height="100%"
-                        alt="">
+                    <img id="thirdPhoto" src="./assets/img/DCD_Microsoft_Azure_Fundamentals_Certificate.png"
+                        width="100%" height="100%" alt="">
                 </div>
 
-                <!--FOURTH-->
-                <div class="grid-box-element">
-                    <img id="fourthPhoto" src="./assets/img/DCD_Mustafa_Akgul_Free_Software_Summer_Camp.png" width="100%" height="100%"
-                        alt="">
-                </div>
-                <div class="grid-box-element">
-                    Mustafa Akgül Özgür Yazılım Kampı, Linux Sistem Yönetimi 1 kursu <br> 
-                    (20 Temmuz – 4 Ağustos 2018 - Bolu Abant İzzet Baysal Üniversitesi)
-                </div>
+
             </div>
         </div>
     </div>
@@ -266,17 +269,17 @@
                     fourthPhoto.style.border = "none";
                     fourthPhoto.style.zIndex = "1"
                 }
-            }   
-             else {
+            }
+            else {
                 if (firstPhoto.contains(event.target)) {
                     window.open('https://denizcandinc.com/files/DCD_Akademik_Bilisim_Certificate.html', '_blank');
-                }else if(secondPhoto.contains(event.target)){
+                } else if (secondPhoto.contains(event.target)) {
                     window.open('https://denizcandinc.com/files/DCD_CSCON19_Certificate.html', '_blank');
-                }else if(thirdPhoto.contains(event.target)){
+                } else if (thirdPhoto.contains(event.target)) {
                     window.open(' https://denizcandinc.com/files/DCD_Microsoft_Azure_Fundamentals_Certificate.html', '_blank');
-                }else if (fourthPhoto.contains(event.target)) {
+                } else if (fourthPhoto.contains(event.target)) {
                     window.open(' https://denizcandinc.com/files/DCD_Mustafa_Akgul_Free_Software_Summer_Camp.html', '_blank');
-                }   
+                }
             }
 
         });
