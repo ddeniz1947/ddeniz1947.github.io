@@ -39,8 +39,10 @@
                await navigator.credentials
                .get({ abort: signal, otp:{ transport: ['sms']}})
                .then(content => {
+                   console.log(content,"CODE TEST 1");
                  if (content && content.code) {
                    cb(content.code);
+                     console.log(content.code,"CODE TEST 2");
                  }
                })
                .catch(e => console.log(e));
