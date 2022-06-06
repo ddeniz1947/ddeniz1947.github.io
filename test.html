@@ -23,7 +23,7 @@
 
         
         
-        export function autoReadSMS(cb) {
+
             console.log("TEST");
 // used AbortController with setTimeout so that WebOTP API (Autoread sms) will get disabled after 1min
  const signal = new AbortController();
@@ -31,6 +31,7 @@
    signal.abort();
  }, 1 * 60 * 1000);
  async function main() {
+     console.log("WORKED");
    if ('OTPCredential' in window) {
       try {
          if (navigator.credentials) {
@@ -55,7 +56,7 @@
     }
  }
  main();
-}
+
     </script>
   
 
