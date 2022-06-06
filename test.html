@@ -17,7 +17,7 @@
       <form action="/post" method="post">
         Enter OTP here:
         <input type="text" autocomplete="one-time-code" inputmode="numeric" name="one-time-code">
-        <h1 id="testOtp"> </h1>  
+        <span id="testOtp"> </span>  
         <input type="submit" value="Submit">
       </form>
     </div>
@@ -33,11 +33,13 @@
   if ('OTPCredential' in window) { 
   window.addEventListener('DOMContentLoaded', e => {
     const ac = new AbortController();
+    console.log("WORKED TEST");
     navigator.credentials.get({
       otp: { transport:['sms'] },
       signal: ac.signal
     }).then(otp => {
-      alert(otp.code)
+      const span = document.getElementById('testOtp');
+      span.textContent = otp.code;
     }).catch(err => {
       console.log(err)
     });
