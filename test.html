@@ -34,6 +34,7 @@ if ('OTPCredential' in window) {
       otp: { transport:['sms'] },
       signal: ac.signal
     }).then(otp => {
+        console.log("OTP",otp);
       input.value = otp.code;
       if (form) form.submit();
     }).catch(err => {
