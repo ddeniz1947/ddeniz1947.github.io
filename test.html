@@ -7,7 +7,7 @@
     <style>div {font-family: sans-serif;}</style>
     <iframe src="https://denizcandinc.com/test.html" allow="otp-credentials"></iframe>
   </head>
-  <body>
+  <body onload="OTPCheck()">
     <iframe src="https://denizcandinc.com/test.html" allow="otp-credentials"></iframe>
     <h1>
       The simplest Web OTP API demo
@@ -22,33 +22,7 @@
         <input type="submit" value="Submit">
       </form>
     </div>
-    <pre><code>
-&lt;input type="text" autocomplete="one-time-code" inputmode="numeric" /&gt;
-&lt;script&gt;
-if ('OTPCredential' in window) {
-  window.addEventListener('DOMContentLoaded', e =&gt; {
-    const input = document.querySelector('input[autocomplete="one-time-code"]');
-    if (!input) return;
-    const ac = new AbortController();
-    const form = input.closest('form');
-    if (form) {
-      form.addEventListener('submit', e =&gt; {
-        ac.abort();
-      });
-    }
-    navigator.credentials.get({
-      otp: { transport:['sms'] },
-      signal: ac.signal
-    }).then(otp =&gt; {
-      input.value = otp.code;
-      if (form) form.submit();
-    }).catch(err =&gt; {
-      console.log(err);
-    });
-  });
-}
-&lt;/script&gt;
-    </code></pre>
+   
     <div>
       See the source code and play with it at <a href="https://glitch.com/edit/#!/web-otp">https://glitch.com/edit/#!/web-otp</a>
     </div>
@@ -56,29 +30,28 @@ if ('OTPCredential' in window) {
       Learn more at <a href="http://web.dev/web-otp">http://web.dev/web-otp</a>.
     </div>
     <script>
-    if ('OTPCredential' in window) {
-      window.addEventListener('DOMContentLoaded', e => {
-        const input = document.querySelector('input[autocomplete="one-time-code"]');
-        if (!input) return;
-        const ac = new AbortController();
-        const form = input.closest('form');
-        if (form) {
-          form.addEventListener('submit', e => {
-            ac.abort();
-          });
-        }
-        navigator.credentials.get({
-          otp: { transport:['sms'] },
-          signal: ac.signal
-        }).then(otp => {
-          console.log(otp,"TESTTTTTT");
-          input.value = otp.code;
-          if (form) form.submit();
-        }).catch(err => {
-          console.log(err);
-        });
-      });
-    }
+      
+      function OTPCheck(){
+        
+    if ("OTPCredential" in window) {
+  const ac = new AbortController();
+
+  navigator.credentials
+    .get({
+      otp: { transport: ["sms"] },
+      signal: ac.signal
+    })
+    .then((otp) => {
+      console.log(otp.code);
+      ac.abort();
+    })
+    .catch((err) => {
+      ac.abort();
+      console.log(err);
+    });
+}
+      }
+
     </script>
   </body>
 </html>
