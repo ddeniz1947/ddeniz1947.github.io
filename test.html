@@ -29,26 +29,25 @@
       Learn more at <a href="http://web.dev/web-otp">http://web.dev/web-otp</a>.
     </div>
     <script>
-      
-        
-    if ("OTPCredential" in window) {
-  const ac = new AbortController();
-
-  navigator.credentials
-    .get({
-      otp: { transport: ["sms"] },
+      window.onload = (event) => {
+  if ('OTPCredential' in window) { 
+  window.addEventListener('DOMContentLoaded', e => {
+    const ac = new AbortController();
+    navigator.credentials.get({
+      otp: { transport:['sms'] },
       signal: ac.signal
-    })
-    .then((otp) => {
-      console.log(otp.code);
-     document.getElementById("testOtp").innerHTML = otp.code;
-      ac.abort();
-    })
-    .catch((err) => {
-      ac.abort();
-      console.log(err);
+    }).then(otp => {
+      alert(otp.code)
+    }).catch(err => {
+      console.log(err)
     });
+  })
+} else {
+  alert('WebOTP not supported!.')
 }
+};
+        
+   
 
     </script>
   </body>
