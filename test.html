@@ -12,82 +12,36 @@
       Send an SMS that includes <pre><code>@web-otp.glitch.me #12345</code></pre> at the last line to this phone.
     </div>
     <div style="border:1px solid; padding: 5px; 10px; margin: 10px 0;">
-      <form action="/post" method="post">
-        Enter OTP here:
-        <input type="text" autocomplete="one-time-code" inputmode="numeric" name="one-time-code">
-        <input type="submit" value="Submit">
-      </form>
+      <form>
+         <input autocomplete="one-time-code" required/>
+          <input type="submit">
+    </form>
     </div>
     <script>
-        
-
-        
-        
-
-            console.log("TEST");
-// used AbortController with setTimeout so that WebOTP API (Autoread sms) will get disabled after 1min
- const signal = new AbortController();
- setTimeout(() => {
-   signal.abort();
- }, 1 * 60 * 1000);
- async function main() {
-     console.log("WORKED");
-   if ('OTPCredential' in window) {
-      try {
-          console.log(navigator,"NAVIGATOR");
-         if (navigator.credentials) {
-            try {
-                
-                console.log(navigator.credentials);
-               await navigator.credentials
-               .get({ abort: signal, otp:{ transport: ['sms']}})
-               .then(content => {
-                   console.log(content,"CODE TEST 1");
-                 if (content && content.code) {
-                   cb(content.code);
-                     console.log(content.code,"CODE TEST 2");
-                 }
-               })
-               .catch(e => console.log(e));
-            } 
-            catch (e) {
-              return;
-            }
-         }
-      } 
-      catch (err) {
-        console.log(err);
-      }
-    }
- }
- main();
-
-    </script>
-  <script>
-       if ('OTPCredential' in window) {
-      window.addEventListener('DOMContentLoaded', e => {
-        const input = document.querySelector('input[autocomplete="one-time-code"]');
-        if (!input) return;
-        const ac = new AbortController();
-        const form = input.closest('form');
-        if (form) {
-          form.addEventListener('submit', e => {
-            ac.abort();
-          });
-        }
-          console.log(navigator.credentials,"TEST DCD");   
-        navigator.credentials.get({
-          otp: { transport:['sms'] },
-          signal: ac.signal
-        }).then(otp => {
-            console.log(otp.code,"TEST CODE TEST");           
-          input.value = otp.code;
-          if (form) form.submit();
-        }).catch(err => {
-          console.log(err);
-        });
+   
+if ('OTPCredential' in window) {
+  window.addEventListener('DOMContentLoaded', e => {
+    const input = document.querySelector('input[autocomplete="one-time-code"]');
+    if (!input) return;
+    const ac = new AbortController();
+    const form = input.closest('form');
+    if (form) {
+      form.addEventListener('submit', e => {
+        ac.abort();
       });
     }
-      </script>
+    navigator.credentials.get({
+      otp: { transport:['sms'] },
+      signal: ac.signal
+    }).then(otp => {
+      input.value = otp.code;
+      if (form) form.submit();
+    }).catch(err => {
+      console.log(err);
+    });
+  });
+}
+    </script>
+
 
 </body></html>
