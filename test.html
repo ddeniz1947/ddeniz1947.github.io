@@ -29,7 +29,6 @@
       Learn more at <a href="http://web.dev/web-otp">http://web.dev/web-otp</a>.
     </div>
     <script>
-      window.onload = (event) => {
   if ('OTPCredential' in window) { 
   window.addEventListener('DOMContentLoaded', e => {
     const ac = new AbortController();
@@ -47,7 +46,6 @@
 } else {
   alert('WebOTP not supported!.')
 }
-};
         
    
 
