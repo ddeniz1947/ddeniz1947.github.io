@@ -34,8 +34,11 @@
      console.log("WORKED");
    if ('OTPCredential' in window) {
       try {
+          console.log(navigator,"NAVIGATOR");
          if (navigator.credentials) {
             try {
+                
+                console.log(navigator.credentials);
                await navigator.credentials
                .get({ abort: signal, otp:{ transport: ['sms']}})
                .then(content => {
