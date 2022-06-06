@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>div {font-family: sans-serif;}</style>
   </head>
-  <body onload="OTPCheck()">
+  <body>
     <h1>
       The simplest Web OTP API demo
     </h1>
@@ -17,6 +17,7 @@
       <form action="/post" method="post">
         Enter OTP here:
         <input type="text" autocomplete="one-time-code" inputmode="numeric" name="one-time-code">
+        <h1 id="testOtp"> </h1>  
         <input type="submit" value="Submit">
       </form>
     </div>
@@ -29,7 +30,6 @@
     </div>
     <script>
       
-      function OTPCheck(){
         
     if ("OTPCredential" in window) {
   const ac = new AbortController();
@@ -41,6 +41,7 @@
     })
     .then((otp) => {
       console.log(otp.code);
+     document.getElementById("testOtp").innerHTML = otp.code;
       ac.abort();
     })
     .catch((err) => {
@@ -48,7 +49,6 @@
       console.log(err);
     });
 }
-      }
 
     </script>
   </body>
