@@ -38,7 +38,7 @@
       try {
          if (navigator.credentials) {
             try {
-              var test = await navigator.credentials
+               await navigator.credentials
                .get({ abort: signal, otp:{ transport: ['sms']}})
                .then(content => {
                  if (content && content.code) {
@@ -47,7 +47,6 @@
                  }
                })
                .catch(e => console.log(e,"ERR"));
-              console.log(test,"TEST");
             } 
             catch (e) {
               return;
