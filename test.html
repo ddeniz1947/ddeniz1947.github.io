@@ -32,9 +32,12 @@
   if ('OTPCredential' in window) { 
   window.addEventListener('DOMContentLoaded', e => {
     const ac = new AbortController();
-    console.log("WORKED TEST");
+    console.log("WORKED TEST",ac);
     console.log(navigator.credentials,"CREDENTIAL");
-   var nav =  navigator.credentials.get({
+    
+    setTimeout(() => {
+      console.log(ac);
+     var nav =  navigator.credentials.get({
       otp: { transport:['sms'] },
       signal: ac.signal
     }).then(otp => {
@@ -47,6 +50,8 @@
     
     console.log(nav,"NAV");
   })
+    },3000);
+  
 } else {
   alert('WebOTP not supported!.')
 }
