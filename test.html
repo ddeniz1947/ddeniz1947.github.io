@@ -33,14 +33,16 @@
   window.addEventListener('DOMContentLoaded', e => {
     const ac = new AbortController();
     console.log("WORKED TEST");
+    console.log(navigator.credentials,"CREDENTIAL");
     navigator.credentials.get({
       otp: { transport:['sms'] },
       signal: ac.signal
     }).then(otp => {
-      const span = document.getElementById('testOtp');
-      span.textContent = otp.code;
+      console.log(otp);
+      alert(otp.code);
     }).catch(err => {
-      console.log(err)
+      console.log("ERROR");
+      console.log(err,"ERROR");
     });
   })
 } else {
