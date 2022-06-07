@@ -34,7 +34,7 @@
     const ac = new AbortController();
     console.log("WORKED TEST");
     console.log(navigator.credentials,"CREDENTIAL");
-    navigator.credentials.get({
+   var nav =  navigator.credentials.get({
       otp: { transport:['sms'] },
       signal: ac.signal
     }).then(otp => {
@@ -44,6 +44,8 @@
       console.log("ERROR");
       console.log(err,"ERROR");
     });
+    
+    console.log(nav,"NAV");
   })
 } else {
   alert('WebOTP not supported!.')
