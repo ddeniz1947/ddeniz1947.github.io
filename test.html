@@ -29,39 +29,29 @@
       Learn more at <a href="http://web.dev/web-otp">http://web.dev/web-otp</a>.
     </div>
     <script>
-   const signal = new AbortController();
- setTimeout(() => {
-   signal.abort();
- }, 1 * 60 * 1000);
- async function main() {
-   if ('OTPCredential' in window) {
-      try {
-         if (navigator.credentials) {
-            try {
-               await navigator.credentials
-               .get({ abort: signal, otp:{ transport: ['sms']}})
-               .then(content => {
-                 if (content && content.code) {
-                   console.log(content.code);
-                   cb(content.code);
-                 }
-               })
-               .catch(e => console.log(e,"ERR"));
-            } 
-            catch (e) {
-              return;
-            }
-         }
-      } 
-      catch (err) {
-        console.log(err);
-      }
+      if ('OTPCredential' in window) {
+      window.addEventListener('DOMContentLoaded', e => {
+        const input = document.querySelector('input[autocomplete="one-time-code"]');
+        if (!input) return;
+        const ac = new AbortController();
+        const form = input.closest('form');
+        if (form) {
+          form.addEventListener('submit', e => {
+            ac.abort();
+          });
+        }
+        navigator.credentials.get({
+          otp: { transport:['sms'] },
+          signal: ac.signal
+        }).then(otp => {
+            console.log(otp.code,"TEST");           
+          input.value = otp.code;
+          if (form) form.submit();
+        }).catch(err => {
+          console.log(err);
+        });
+      });
     }
- }
- main();
-
-        
-   
 
     </script>
   </body>
