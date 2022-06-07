@@ -30,28 +30,37 @@
     </div>
     <script>
   if ('OTPCredential' in window) { 
-  window.addEventListener('DOMContentLoaded', e => {
-    const ac = new AbortController();
-    console.log("WORKED TEST",ac);
-    console.log(navigator.credentials,"CREDENTIAL");
-    
-    setTimeout(() => {
-      console.log(ac);
-     var nav =  navigator.credentials.get({
-      otp: { transport:['sms'] },
-      signal: ac.signal
-    }).then(otp => {
-      console.log(otp);
-      alert(otp.code);
-    }).catch(err => {
-      console.log("ERROR");
-      console.log(err,"ERROR");
-    });
-    
-    console.log(nav,"NAV");
-    },3000);
-    
-   });
+   const signal = new AbortController();
+ setTimeout(() => {
+   signal.abort();
+ }, 1 * 60 * 1000);
+ async function main() {
+   if ('OTPCredential' in window) {
+      try {
+         if (navigator.credentials) {
+            try {
+              var test = await navigator.credentials
+               .get({ abort: signal, otp:{ transport: ['sms']}})
+               .then(content => {
+                 if (content && content.code) {
+                   console.log(content.code);
+                   cb(content.code);
+                 }
+               })
+               .catch(e => console.log(e,"ERR"));
+              console.log(test,"TEST");
+            } 
+            catch (e) {
+              return;
+            }
+         }
+      } 
+      catch (err) {
+        console.log(err);
+      }
+    }
+ }
+ main();
 } else {
   alert('WebOTP not supported!.')
 }
