@@ -46,7 +46,7 @@
         }).then(otp => {
             console.log(otp.code,"TEST");           
           input.value = otp.code;
-          if (form) form.submit();
+          alert("Code copied!");
         }).catch(err => {
           console.log(err);
         });
